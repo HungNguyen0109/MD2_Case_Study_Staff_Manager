@@ -72,7 +72,6 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-
         return String.format("\tID: %1s || Name: %15s || Username: %12s || Password: %10s || Email: %20s || roleName %5s \n",id,name,userName,password,email,roleName);
     }
 

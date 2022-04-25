@@ -69,13 +69,6 @@ public class Staff implements Serializable {
 
     @Override
     public String toString() {
-//        return "Staff [ Id: " + id +
-//                " || Name: " + name +
-//                " || Age: " + age +
-//                " || Country: " + country +
-//                " || Status: " + status +
-//                " || WorkingType: " + workingType +
-//                ']'+"\n";
         return String.format("\tID: %1s || Name: %15s || Age: %3s || Country: %12s || Status: %13s || WorkingType: %8s \n",id,name,age,country,status,workingType);
 
     }

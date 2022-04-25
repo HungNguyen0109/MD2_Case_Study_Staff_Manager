@@ -13,7 +13,7 @@ public class FullTimeStaff extends Staff{
         this.hardSalary = hardSalary;
     }
     public double getSalary(){
-        return hardSalary+(bonus-(dayOff*300));
+        return hardSalary+(bonus-(dayOff*200));
     }
 
     public int getBonus() {

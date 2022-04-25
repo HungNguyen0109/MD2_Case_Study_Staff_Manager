@@ -18,7 +18,16 @@ public class StaffView {
     StaffServiceIMPL staffServiceIMPL = new StaffServiceIMPL();
     public void showListStaff() {
         System.out.println(staffController.showListStaff());
-        new MenuAdmin();
+        System.out.println("Nhập quit để trở về menu");
+        String backMenu = scanner.nextLine();
+        if(backMenu.equalsIgnoreCase("quit")){
+            if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.ADMIN){
+                new MenuAdmin();
+            } else if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.USER){
+                new MenuStaff();
+            }
+
+        }
 
     }
 
@@ -90,7 +99,7 @@ public class StaffView {
                         workingType = "FullTime";
                         break;
                 }
-                checkWorkingType = Pattern.matches("Parttime|Fulltime", workingType);
+                checkWorkingType = Pattern.matches("PartTime|FullTime", workingType);
                 if (!checkWorkingType) {
                     System.err.println("Vui lòng nhập lại !!");
                 } else {
@@ -117,7 +126,16 @@ public class StaffView {
         System.out.println("Nhập tên nhân viên cần kiểm tra: ");
         String name = scanner.nextLine();
         staffController.checkStatusByName(name);
-        new MenuAdmin();
+        System.out.println("Nhập quit để trở về menu");
+        String backMenu = scanner.nextLine();
+        if(backMenu.equalsIgnoreCase("quit")){
+            if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.ADMIN){
+                new MenuAdmin();
+            } else if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.USER){
+                new MenuStaff();
+            }
+
+        }
     }
 
     public void editStaff() {
@@ -225,7 +243,7 @@ public class StaffView {
                     workingType = "FullTime";
                     break;
             }
-            checkWorkingType = Pattern.matches("Parttime|Fulltime", workingType);
+            checkWorkingType = Pattern.matches("PartTime|FullTime", workingType);
             if (!checkWorkingType) {
                 System.err.println("Vui lòng nhập lại !!");
             } else {
@@ -242,7 +260,16 @@ public class StaffView {
         System.out.println("Nhập ID: ");
         int id = Integer.parseInt(scanner.nextLine());
         staffController.findById(id);
-        new MenuAdmin();
+        System.out.println("Nhập quit để trở về menu");
+        String backMenu = scanner.nextLine();
+        if(backMenu.equalsIgnoreCase("quit")){
+            if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.ADMIN){
+                new MenuAdmin();
+            } else if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.USER){
+                new MenuStaff();
+            }
+
+        }
 
     }
 
@@ -251,24 +278,32 @@ public class StaffView {
         String name = scanner.nextLine();
         staffController.findByName(name);
         System.out.println();
-        System.out.println("Nhập quit để quay lại Menu");
+        System.out.println("Nhập quit để trở về menu");
         String backMenu = scanner.nextLine();
-        if (backMenu.equalsIgnoreCase("quit")) {
-            for (int i = 0; i < userListLogin.size(); i++) {
-                if (Role.RoleName.ADMIN.equals(userListLogin.get(i).getRoleName())) {
-                    new MenuAdmin();
-                } else {
-                    new MenuStaff();
-                }
+        if(backMenu.equalsIgnoreCase("quit")){
+            if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.ADMIN){
+                new MenuAdmin();
+            } else if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.USER){
+                new MenuStaff();
             }
+
         }
     }
 
-    public void editStatus() {
+    public void  editStatus() {
         System.out.println("Nhập id: ");
         int id = Integer.parseInt(scanner.nextLine());
         staffController.editStatus(id);
-        new MenuAdmin();
+        System.out.println("Nhập quit để trở về menu");
+        String backMenu = scanner.nextLine();
+        if(backMenu.equalsIgnoreCase("quit")){
+            if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.ADMIN){
+                new MenuAdmin();
+            } else if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.USER){
+                new MenuStaff();
+            }
+
+        }
     }
 
     public void getWorkingType() {
@@ -350,8 +385,18 @@ public class StaffView {
 
 
     public void showListSalaryFull() {
+        System.out.println(staffList1);
         System.out.println(staffController.showListSalaryFull());
-        new MenuAdmin();
+        System.out.println("Nhập quit để trở về menu");
+        String backMenu = scanner.nextLine();
+        if(backMenu.equalsIgnoreCase("quit")){
+            if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.ADMIN){
+                new MenuAdmin();
+            } else if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.USER){
+                new MenuStaff();
+            }
+
+        }
 
     }
 
@@ -371,7 +416,16 @@ public class StaffView {
 
     public void showListSalaryPart() {
         System.out.println(staffController.showListSalaryPart());
-        new MenuAdmin();
+        System.out.println("Nhập quit để trở về menu");
+        String backMenu = scanner.nextLine();
+        if(backMenu.equalsIgnoreCase("quit")){
+            if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.ADMIN){
+                new MenuAdmin();
+            } else if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.USER){
+                new MenuStaff();
+            }
+
+        }
 
     }
     public void setupSalary(){
@@ -388,7 +442,7 @@ public class StaffView {
             System.err.println("ID không tồn tại");
             new MenuAdmin();
         }
-        //thưởng
+
         System.out.println("Nhập tiền thưởng(không quá 4 số)");
         String temp;
         boolean checkTemp;

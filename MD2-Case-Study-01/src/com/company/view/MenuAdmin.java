@@ -84,8 +84,7 @@ public class MenuAdmin {
                             case "1":
                                 System.out.println("1.Tính toàn bộ lương");
                                 System.out.println("2.Hiển thị bảng lương");
-                                System.out.println("3.Tính lương của nhân viên mới");
-                                System.out.println("4.Chỉnh sửa lương");
+                                System.out.println("3.Chỉnh sửa lương");
                                 System.out.println("Chọn thao tác");
                                 String choose4 = scanner.nextLine();
                                 switch (choose4) {
@@ -97,9 +96,6 @@ public class MenuAdmin {
                                         staffView.showListSalaryFull();
                                         break;
                                     case "3":
-                                        staffView.creatSalaryFull();
-                                        break;
-                                    case "4":
                                         staffView.setupSalary();
                                         break;
                                     default:

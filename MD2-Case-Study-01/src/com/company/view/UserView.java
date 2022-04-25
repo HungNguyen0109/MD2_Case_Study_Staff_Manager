@@ -157,7 +157,16 @@ public class UserView {
 
     public void showListUserLogin() {
         System.out.println(userController.showListUserLogin());
-        new MenuAdmin();
+        System.out.println("Nhập quit để trở về menu");
+        String backMenu = scanner.nextLine();
+        if(backMenu.equalsIgnoreCase("quit")){
+            if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.ADMIN){
+                new MenuAdmin();
+            } else if (UserServiceIMPL.userListLogin.get(0).getRoleName()== Role.RoleName.USER){
+                new MenuStaff();
+            }
+
+        }
     }
 
     public void deleteUser()  {
